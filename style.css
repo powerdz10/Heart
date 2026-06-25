@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0b0b0b;
+    color: #ff3366;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* واجهة الترمينال */
+.terminal-container {
+    background-color: #121212;
+    border: 1px solid #331111;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(255, 51, 102, 0.1);
+    z-index: 10;
+    transition: opacity 1s ease-out;
+}
+
+.terminal-header {
+    background-color: #1a1a1a;
+    padding: 10px;
+    font-size: 14px;
+    border-bottom: 1px solid #222;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: #888;
+}
+
+.terminal-body {
+    padding: 25px;
+}
+
+.line {
+    margin-bottom: 12px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+/* زر فك التشفير */
+.decrypt-btn {
+    background-color: #ff3366;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+    box-shadow: 0 0 15px rgba(255, 51, 102, 0.4);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.decrypt-btn:hover {
+    background-color: #e02253;
+    transform: scale(1.02);
+}
+
+.hint {
+    font-size: 11px;
+    color: #555;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* حاوية التنشيط والقلب */
+.heart-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* الكلمات المتطايرة واللي تشكل القلب */
+.love-text {
+    position: absolute;
+    font-size: 11px;
+    font-weight: bold;
+    color: #ff3366;
+    text-shadow: 0 0 8px rgba(255, 51, 102, 0.8);
+    transform: translate(-50%, -50%);
+    animation: heartbeat 2s infinite ease-in-out alternate;
+    white-space: nowrap;
+}
+
+/* حركة نبض القلب الجماعية */
+@keyframes heartbeat {
+    0% {
+        transform: translate(-50%, -50%) scale(0.95);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+}
